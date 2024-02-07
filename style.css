@@ -1,0 +1,35 @@
+* {
+    
+}
+
+#certificate {
+    max-height: 1100px;
+    max-width: 850px;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+#headertext {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+}
+
+#logo {
+    position: absolute;
+    left: 100%;
+    top: 5%;
+}
+
+#thisis {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+}
+
+#namecert {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+}

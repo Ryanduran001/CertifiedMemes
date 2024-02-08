@@ -1,35 +1,78 @@
-* {
-    
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 #certificate {
     max-height: 1100px;
     max-width: 850px;
     position: relative;
-    text-align: center;
     color: black;
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
 
 #headertext {
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 0%;
+    text-align: center;
+    font-size: 60px;
 }
 
 #logo {
     position: absolute;
-    left: 100%;
+    left: 90%;
     top: 5%;
+    text-align: center;
 }
 
 #thisis {
+    justify-content: center;
     position: absolute;
-    left: 50%;
-    top: 25%;
+    left: 45%;
+    top: 20%;
+    text-align: center;
+    font-size: 48px;
 }
 
 #namecert {
     position: absolute;
     left: 50%;
     top: 30%;
+    text-align: center;
+    font-size: 48px;
+}
+
+#certifier {
+    position: absolute;
+    left: 5%;
+    top: 87%;
+}
+
+#certifier-position {
+    position: absolute;
+    left: 5%;
+    top: 90%;
+}
+
+#issue-date {
+    position: absolute;
+    left: 85%;
+    top: 90%;
+}
+
+#css-code {
+
+    font-family: 'Space Mono', monospace;
+    font-size: 42px;
+    position: absolute;
+    left: -25%;
+    top: 40%;
+}
+
+.css-text {
+    text-align: none;
+}
+
+#css-code-holder {
+    display: none;
 }

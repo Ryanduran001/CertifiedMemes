@@ -73,6 +73,6 @@
     text-align: none;
 }
 
-#css-code-holder {
+#css-code-holder, #headertext-holder, #thisis-holder, #namecert-holder, #certifier-holder, #certifier-position-holder, #issue-date-holder {
     display: none;
 }

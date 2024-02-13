@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let speed = 100;
+    let speed = 10;
     let element = '';
     let holder = '';
-    let language = document.getElementById('language-select').value;
     let headertext = '';
     let headertext_holder = ''
+    let logo_holder = document.getElementById('logo')
     let css_code_holder = document.getElementById('css-code-holder').innerText;
     let css_code = document.getElementById('css-text');
+    let randnum = 0;
     
     var form = document.getElementById("input");
     function handleForm(event) { 
@@ -14,25 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
     form.addEventListener('submit', handleForm);
 
-    if(language == 'html') {
-        headertext_holder = document.getElementById('headertext-holder-html').innerText;
-        headertext = document.getElementById('headertext');
-    }
 
-    if(language == 'css') {
-        headertext_holder = document.getElementById('headertext-holder-css').innerText;
-        headertext = document.getElementById('headertext');
-    }
-
-    if(language == 'js') {
-        headertext_holder = document.getElementById('headertext-holder-js').innerText;
-        headertext = document.getElementById('headertext');
-    }
 
     const thisis_holder = document.getElementById('thisis-holder').innerText;
     let thisis = document.getElementById('thisis');
 
-    const namecert_holder = document.getElementById('namecert-holder').innerText;
+    const namecert_holder = document.getElementById('nameone').innerText;
     let namecert = document.getElementById('namecert');
 
     const certifier_holder = document.getElementById('certifier-holder').innerText;
@@ -44,8 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const issue_date_holder = document.getElementById('issue-date-holder').innerText;
     let issue_date = document.getElementById('issue-date');
 
-    function generate() {
+    generatebtn = document.getElementById('generate')
+    generatebtn.addEventListener('click', generate)
 
+    function generate() {
+        let language = document.getElementById('language-select').value;
+        if(language == 'html') {
+            headertext_holder = document.getElementById('headertext-holder-html').innerText;
+            headertext = document.getElementById('headertext');
+            logo_holder.setAttribute('src', `images\\HTMLLogo.png`)
+        }
+    
+        if(language == 'css') {
+            headertext_holder = document.getElementById('headertext-holder-css').innerText;
+            headertext = document.getElementById('headertext');
+            logo_holder.setAttribute('src', `images\\CSSLogo.png`)
+        }
+    
+        if(language == 'js') {
+            headertext_holder = document.getElementById('headertext-holder-js').innerText;
+            headertext = document.getElementById('headertext');
+            logo_holder.setAttribute('src', `images\\JavaScriptLogo.png`)
+        }
         for (let k = 0; k < 7; k++) {
             if (k === 0) {
                 element = css_code;
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 holder = thisis_holder;
             } else if (k === 3) {
                 element = namecert;
-                holder = namecert_holder;
+                holder = elevenCharacters(document.getElementById('nameone').value)
             } else if (k === 4) {
                 element = certifier;
                 holder = certifier_holder;
@@ -69,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 element = issue_date;
                 holder = issue_date_holder;
             }
+
             writeText(element, holder);
         }
 
@@ -90,5 +99,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    generate();
+    function randomSplice(name) {
+        randnum = Math.floor((Math.random() * (parseInt(name.length) + 1)));
+        return name.substring(randnum);
+    }
+    
+    
+    function elevenCharacters(name) {
+        while (name.length > 11) {
+            console.log(name)
+            name = randomSplice(name)
+        }
+        if(name.length == 11) {
+            return(name);
+        }
+        else {
+            while (name.length != 11) {
+                name += ' ';
+            }
+        }
+        return;
+    }
+
+    // generate();
 });
+

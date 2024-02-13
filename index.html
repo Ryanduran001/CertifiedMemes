@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="input">
-        <h2>Full Name</h2>
+        <h2>Full Name (MUST BE 11 CHARACTERS)</h2>
         <input type="text" name="nameone" id="nameone">
         <h2>Language Certified In</h2>
         <select id="language-select">
@@ -17,7 +17,7 @@
             <option value="css">Cascading Style Sheets (CSS)</option>
             <option value="js">JavaScript (JS)</option>
         </select>
-        <button onclick="generate(this.form)">Generate</button>
+        <button id="generate">Generate</button>
     </form>
     <section id="certificate">
         <img src="images\CertifiedMemesBorder2.png" alt="Certificate Background" height="850px" width="1100px">
@@ -31,10 +31,10 @@
 
 
         <h2 id="headertext-holder-html"> Certificate<br> of HTML </h2>
-        <h2 id="headertext-holder-css"> Certificate<br> of CSS </h2>
+        <h2 id="headertext-holder-css"> Certificate<br> of <br>CSS </h2>
         <h2 id="headertext-holder-js"> Certificate<br> of JavaScript </h2>
         <h3 id="thisis-holder"> This Is To Certify: </h3>
-        <h3 id="namecert-holder"> Full Name </h3>
+        <h3 id="namecert-holder"> Ryan Duran </h3>
         <h4 id="certifier-holder"> Ryan Duran </h4>
         <h4 id="certifier-position-holder"> Chief Executive </h4>
         <h4 id="issue-date-holder"> 02/13/24 </h4>

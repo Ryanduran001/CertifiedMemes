@@ -12,7 +12,7 @@
 
 #headertext {
     position: absolute;
-    left: 50%;
+    left: 37%;
     top: 0%;
     text-align: center;
     font-size: 60px;
@@ -73,6 +73,10 @@
     text-align: none;
 }
 
-#css-code-holder, #headertext-holder, #thisis-holder, #namecert-holder, #certifier-holder, #certifier-position-holder, #issue-date-holder {
+#css-code-holder, #thisis-holder, #namecert-holder, #certifier-holder, #certifier-position-holder, #issue-date-holder, #headertext-holder-css, #headertext-holder-js, #headertext-holder-html{
+    display: none;
+}
+
+.hidden {
     display: none;
 }

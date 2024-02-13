@@ -2,12 +2,32 @@ document.addEventListener("DOMContentLoaded", function () {
     let speed = 100;
     let element = '';
     let holder = '';
-
-    const css_code_holder = document.getElementById('css-code-holder').innerText;
+    let language = document.getElementById('language-select').value;
+    let headertext = '';
+    let headertext_holder = ''
+    let css_code_holder = document.getElementById('css-code-holder').innerText;
     let css_code = document.getElementById('css-text');
+    
+    var form = document.getElementById("input");
+    function handleForm(event) { 
+        event.preventDefault();
+    } 
+    form.addEventListener('submit', handleForm);
 
-    const headertext_holder = document.getElementById('headertext-holder').innerText;
-    let headertext = document.getElementById('headertext');
+    if(language == 'html') {
+        headertext_holder = document.getElementById('headertext-holder-html').innerText;
+        headertext = document.getElementById('headertext');
+    }
+
+    if(language == 'css') {
+        headertext_holder = document.getElementById('headertext-holder-css').innerText;
+        headertext = document.getElementById('headertext');
+    }
+
+    if(language == 'js') {
+        headertext_holder = document.getElementById('headertext-holder-js').innerText;
+        headertext = document.getElementById('headertext');
+    }
 
     const thisis_holder = document.getElementById('thisis-holder').innerText;
     let thisis = document.getElementById('thisis');
@@ -25,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let issue_date = document.getElementById('issue-date');
 
     function generate() {
+
         for (let k = 0; k < 7; k++) {
             if (k === 0) {
                 element = css_code;
@@ -50,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             writeText(element, holder);
         }
+
     }
 
     function writeText(element, holder, idx = 0) {
@@ -58,9 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
             writeText(element, holder, idx);
             return;
         }
-
-        console.log(element)
-        console.log(holder)
 
         element.innerText = holder.slice(0, idx);
 

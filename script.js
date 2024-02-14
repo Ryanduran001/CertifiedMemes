@@ -101,22 +101,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function randomSplice(name) {
         randnum = Math.floor((Math.random() * (parseInt(name.length) + 1)));
-        return name.substring(randnum);
+        return name.substring(0, randnum)+name.substring(randnum+1);
+    }
+
+    function randomSpace(name) {
+        randnum = random(name.length)
+        name = name.slice(0, randnum) + '_' + name.slice(randnum);
+        
+        
+        return name
+
+
+
+        var txt2 = txt1.slice(0, 3) + "bar" + txt1.slice(3);
+    }
+
+    function random(max) {
+        return Math.floor((Math.random() * (parseInt(max) + 1)));
     }
     
     
     function elevenCharacters(name) {
+        while (name.length < 11) {
+            console.log(name)
+            name = randomSpace(name)
+        }
         while (name.length > 11) {
             console.log(name)
             name = randomSplice(name)
         }
         if(name.length == 11) {
-            return(name);
-        }
-        else {
-            while (name.length != 11) {
-                name += ' ';
-            }
+            return(name + ' ');
         }
         return;
     }
